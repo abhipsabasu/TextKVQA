@@ -32,8 +32,8 @@ class MMT1(BertPreTrainedModel):
         encoder_inputs = torch.cat(
             [
                 batch_dict["text_bert_emb"],
-                #batch_dict["obj_mmt_in"],
-                #batch_dict["scene_mmt_in"]
+                batch_dict["obj_mmt_in"],
+                batch_dict["scene_mmt_in"]
             ] +
             [batch_dict["kb_mmt_in_" + str(i)] for i in range(no_triplets)],
             dim=1,
@@ -49,8 +49,8 @@ class MMT1(BertPreTrainedModel):
         attention_mask = torch.cat(
             [
                 batch_dict["question_mask"],
-                #batch_dict["pad_obj_mask"],
-                #batch_dict["scene_mask"].cuda(device=dec_emb.device, non_blocking=True),
+                batch_dict["pad_obj_mask"],
+                batch_dict["scene_mask"].cuda(device=dec_emb.device, non_blocking=True),
 
             ] +
             [batch_dict["kb_mask_" + str(i)].cuda(device=dec_emb.device, non_blocking=True)
@@ -164,8 +164,8 @@ class MultiModalTransformer(nn.Module):
         self.vocab = vocab
         # split model building into several components
         self._build_txt_encoding()
-        #self._build_obj_encoding()
-        #self._build_scene_encoding()
+        self._build_obj_encoding()
+        self._build_scene_encoding()
         self._build_kb_encoding()
         self._build_mmt()
         self._build_output()
@@ -243,8 +243,8 @@ class MultiModalTransformer(nn.Module):
 
     def forward(self, batch_dict):
         """Main forward method"""
-        #self._forward_obj_encoding(batch_dict)
-        #self._forward_scene_encoding(batch_dict)
+        self._forward_obj_encoding(batch_dict)
+        self._forward_scene_encoding(batch_dict)
         self._forward_kb_encoding(batch_dict)
         self._forward_mmt_and_output(batch_dict)
         results_dict = {
