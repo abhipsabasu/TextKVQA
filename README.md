@@ -34,6 +34,9 @@ In train.py, in the main function, make create_ocr_feats = True and all other fl
 For the images, create a folder called data/images. Inside data/images, download the following images from http://dosa.cds.iisc.ac.in/kvqa/text-KVQA-scene.tar.gz
 From the same link, download the questions. Put them in the data folder as well.
 
+## Fasttext model
+Download the pretrained English fasttext model from https://dl.fbaipublicfiles.com/fasttext/vectors-wiki/wiki.en.zip. Unzip this file and put the .bin file in the main directory. Its name should be wiki.en.bin.
+
 ## FRCNN features
 In train.py, in the main function, make create_obj_feats = True, all other flags = False, and run train.py.
 
