@@ -31,7 +31,7 @@ Put pretrained text-recognition model at 'detector/pretrained-models/text-recogn
 In train.py, in the main function, make create_ocr_feats = True and all other flags = False, and run train.py
 
 ## Data
-For the images, create a folder called data/images. Inside data/images, download the following images from http://dosa.cds.iisc.ac.in/kvqa/text-KVQA-scene.tar.gz
+For the images, create a folder called data/images. Inside data/images, download the following images from http://dosa.cds.iisc.ac.in/kvqa/text-KVQA-scene.tar.gz.
 From the same link, download the questions. Put them in the data folder as well.
 
 ## Fasttext model
