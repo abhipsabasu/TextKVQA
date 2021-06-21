@@ -41,6 +41,7 @@ In train.py, in the main function, make create_obj_feats = True, all other flags
 In train.py, in the main function, make recognize_scenes = True, all other flags = False, and run train.py.
 
 ## Knowledge Graph Pruning
+First download the knowledge graph from https://drive.google.com/file/d/1uqjE2cd2vmRyFLJBQOQaLAQrheR0aMmw/view?usp=sharing. Put it in the main directory.
 In train.py, in the main function, make find_string_ocr_simi = True, all other flags = False, and run train.py.
 
 ## Training
