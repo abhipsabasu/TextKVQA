@@ -45,7 +45,7 @@ First download the knowledge graph from https://drive.google.com/file/d/1uqjE2cd
 In train.py, in the main function, make find_string_ocr_simi = True, all other flags = False, and run train.py.
 
 ## Training
-In train.py, in the main function, make train = True, all other flags = False, and run train.py.
+In train.py, in the main function, make train = True, all other flags = False, and run train.py. Number of epochs is set to 10. For the current split of the data, it is enough to reach saturation.
 
 ## Model
 The model is written in mmt.py. The current model is the most successful model as mentioned in the report.
