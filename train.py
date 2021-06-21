@@ -240,7 +240,7 @@ def main(create_ocr_feats=False, create_obj_feats=False, recognize_scenes=False,
         logger.info(f"Training Parameters: {trainable_params}")
         best_val_loss = 10000
         logger.info(f"Num batches: {len(train_loader)}")
-        for e in range(2):
+        for e in range(10):
             loss_values = []
             epoch_acc = []
             for step, dic in enumerate(train_loader):
